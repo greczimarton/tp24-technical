@@ -7,7 +7,7 @@ using TP24Receivables.Logic.Models;
 
 namespace TP24Receivables.Logic
 {
-    internal class CurrencyConverter
+    public class CurrencyConverter
     {
         public StatisticsConfig Config {  get; set; }
         public CurrencyConverter(StatisticsConfig config) 

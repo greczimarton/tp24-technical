@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using TP24Receivables.Data.Models;
 using TP24Receivables.Logic;
 using TP24Receivables.Logic.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace TP24Receivables.API.Controllers
 {
@@ -12,25 +15,24 @@ namespace TP24Receivables.API.Controllers
     {
         private readonly IConfiguration Configuration;
         private readonly ILogger Logger;
-        private readonly StatisticsConfig StatisticsConfig;
+        private readonly StatisticsConfig _statisticsConfig;
 
-        public ReceivablesController(IConfiguration configuration, ILogger logger)
+        public ReceivablesController(IOptions<StatisticsConfig> statisticsConfig)
         {
-            this.Configuration = configuration;
-            this.Logger = logger;
-
-            this.Configuration.Bind(StatisticsConfig);
+            _statisticsConfig = statisticsConfig.Value;
+            //this.Logger = logger;
             ;
         }
 
         [HttpPost]
-        public IActionResult Statistics(List<ReceivablesPayLoad> payload)
+        [SwaggerRequestExample(typeof(Payload), typeof(PayloadExample))]
+        public IActionResult Statistics(List<Payload> payload)
         {
-            var receivables = payload.Select(inputPayload => new Receivable(inputPayload)).ToList();
+            var debtors = PayloadParser.Parse(payload);
 
-            var logic = new ReceivablesLogic(receivables, StatisticsConfig);
+            var logic = new ReceivablesLogic(debtors, _statisticsConfig);
 
-            var statistics = logic.GetStatistics();
+            var statistics = logic.GetStatisticsForAllReceivables();
 
             return Ok(statistics);
 

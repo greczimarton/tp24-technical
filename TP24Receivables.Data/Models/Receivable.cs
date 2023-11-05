@@ -19,14 +19,14 @@ namespace TP24Receivables.Data.Models
         public DateTime? ClosedDate { get; set; }
         public bool? Cancelled { get; set; }
 
-        public Receivable(ReceivablesPayLoad payload)
+        public Receivable(Payload payload)
         {
             this.Id = Guid.NewGuid();
             this.Reference = payload.Reference;
             this.CurrencyCode = payload.CurrencyCode;
             this.IssueDate = DateTime.Parse(payload.IssueDate, null, System.Globalization.DateTimeStyles.RoundtripKind);
-            this.OpeningValue = double.Parse(payload.OpeningValue);
-            this.PaidValue = double.Parse(payload.PaidValue);
+            this.OpeningValue = decimal.ToDouble(payload.OpeningValue);
+            this.PaidValue = decimal.ToDouble(payload.PaidValue);
             this.DueDate = DateTime.Parse(payload.DueDate, null, System.Globalization.DateTimeStyles.RoundtripKind);
             if (payload.ClosedDate != null)
             {

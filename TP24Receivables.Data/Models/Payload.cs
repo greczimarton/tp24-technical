@@ -1,12 +1,12 @@
 ﻿namespace TP24Receivables.Data.Models
 {
-    public class ReceivablesPayLoad
+    public class Payload
     {
         public string Reference { get; set; }
         public string CurrencyCode { get; set; }
         public string IssueDate { get; set; }
-        public string OpeningValue { get; set; }
-        public string PaidValue { get; set; }
+        public decimal OpeningValue { get; set; }
+        public decimal PaidValue { get; set; }
         public string DueDate { get; set; }
         public string? ClosedDate { get; set; }
         public bool? Cancelled { get; set; }
