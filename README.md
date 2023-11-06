@@ -8,7 +8,7 @@ It took around 2 days to complete the assignment.
  - Visual Studio (I used 2022 Community)
  - .NET 7.0 SDK (for testing purposes)
 
-### How to run?
+### How to run it?
  - Clone the repository
  - Open project in terminal
  - Run ```docker-compose up -d```
@@ -32,8 +32,7 @@ It took around 2 days to complete the assignment.
    - It also has some other properties, about the debtor like Name and Reference
 
 #### 2. The API then stores these objects in a database
-   - I use Entity Framework Core for this
-   - I use and setup PostgreSQL as the database
+   - I use Entity Framework Core and PostgreSQL as the database
 
 #### 3. The API then calls the logic layer:
 - It builds a Statistics for each Debtor
