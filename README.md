@@ -57,7 +57,7 @@ It took around 2 days to complete the assignment.
          - From Closed receivables ClosedLate receivables are also calculated
            - ClosedLate: Receivables which are closed after their DueDate 
        - Open: All the receivables which are not **closed**
-         - Late: Open Receivables with DueDate is **after** the current date
+         - Late: Open Receivables with DueDate **after** the current date
        - DueIn7Days: Receivables which are not closed and their DueDate is **within** 7 days
  - The API then returns the Statistics in a JSON format
    - If an exception occured during the process, the API returns a 500 Internal Server Error with the exception message
