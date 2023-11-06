@@ -1,8 +1,10 @@
+using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 using TP24Receivables.API;
 using TP24Receivables.Data;
 using TP24Receivables.Data.Models;
 using TP24Receivables.Logic.Models;
+using TP24Receivables.Repository;
 
 namespace TP24ReceivablesAPI
 {
@@ -27,6 +29,8 @@ namespace TP24ReceivablesAPI
             builder.Services.AddDbContext<ReceivablesDbContext>(options => 
                 options.UseNpgsql(connectionString)
             );
+
+            builder.Services.AddScoped<IDebtorRepository, DebtorRepository>();
 
             var app = builder.Build();
 

@@ -12,7 +12,7 @@ namespace TP24Receivables.Data
         public DbSet<DebtorAddress> DebtorAddresses { get; set; }
         public DbSet<Receivable> Receivables { get; set; }
         
-        public ReceivablesDbContext(DbContextOptions<ReceivablesDbContext> options) : base(options)
+        public ReceivablesDbContext(DbContextOptions options) : base(options)
         {
             try
             {

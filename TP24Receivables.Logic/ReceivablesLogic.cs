@@ -1,6 +1,7 @@
 ﻿using TP24Receivables.Data.Models;
 using TP24Receivables.Logic.Classes;
 using TP24Receivables.Logic.Models;
+using TP24Receivables.Repository;
 
 namespace TP24Receivables.Logic
 {
@@ -21,6 +22,7 @@ namespace TP24Receivables.Logic
 
             foreach (var debtor in Debtors)
             {
+                
                 var statisticsForDebtor = GetStatisticsForDebtor(debtor);
                 allStatistics.Add(statisticsForDebtor);
             }

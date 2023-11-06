@@ -6,6 +6,7 @@ using TP24Receivables.Logic.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using TP24Receivables.Logic.Classes;
+using TP24Receivables.Repository;
 
 namespace TP24Receivables.API.Controllers
 {
@@ -14,9 +15,11 @@ namespace TP24Receivables.API.Controllers
     public class ReceivablesController : ControllerBase
     {
         private readonly StatisticsConfig _statisticsConfig;
+        private readonly IDebtorRepository _debtorRepository;
 
-        public ReceivablesController(IOptions<StatisticsConfig> statisticsConfig)
+        public ReceivablesController(IOptions<StatisticsConfig> statisticsConfig, IDebtorRepository debtorRepository)
         {
+            _debtorRepository = debtorRepository;
             _statisticsConfig = statisticsConfig.Value;
         }
 
@@ -24,6 +27,11 @@ namespace TP24Receivables.API.Controllers
         public IActionResult Statistics(List<Payload> payload)
         {
             var debtors = PayloadParser.Parse(payload);
+
+            foreach (var debtor in debtors)
+            {
+                _debtorRepository.SaveDebtor(debtor);
+            }
 
             var logic = new ReceivablesLogic(debtors, _statisticsConfig);
 
