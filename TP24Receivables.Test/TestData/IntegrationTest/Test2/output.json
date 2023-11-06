@@ -1,0 +1,298 @@
+[
+  {
+    "debtorReference": "D-99999",
+    "debtorName": "EFG Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2000,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2000,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2000,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-67890",
+    "debtorName": "HIJ Inc.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2325.93,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "late": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "dueIn7Days": 0,
+    "closed": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2325.93,
+      "valueRate": 1
+    },
+    "closedLate": 2
+  },
+  {
+    "debtorReference": "D-24680",
+    "debtorName": "KLM Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 3,
+      "countRate": 1,
+      "value": 3911.73,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 3,
+      "countRate": 1,
+      "value": 3911.73,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 3,
+      "countRate": 1,
+      "value": 3911.73,
+      "valueRate": 1
+    },
+    "dueIn7Days": 3,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-98765",
+    "debtorName": "NOP Corp.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 3,
+      "countRate": 1,
+      "value": 4743.46,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 2,
+      "countRate": 0.67,
+      "value": 2697.46,
+      "valueRate": 0.57
+    },
+    "open": {
+      "count": 1,
+      "countRate": 0.33,
+      "value": 2046,
+      "valueRate": 0.43
+    },
+    "late": {
+      "count": 1,
+      "countRate": 0.33,
+      "value": 2046,
+      "valueRate": 0.43
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-12345",
+    "debtorName": "QRS Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 901.8,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 901.8,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 901.8,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-86420",
+    "debtorName": "TUV Inc.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1116,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1116,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1116,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-54321",
+    "debtorName": "XYZ Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1800.5,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1800.5,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1800.5,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-75300",
+    "debtorName": "JKL Corp.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1488,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1488,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1488,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  }
+]

@@ -1,49 +1,47 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Testing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using TP24ReceivablesAPI;
 
 namespace TP24Receivables.Test
 {
-    public class IntegrationTests /*: IClassFixture<WebApplicationFactory<Program>>*/
+    public class IntegrationTests : IClassFixture<WebApplicationFactory<Program>>
     {
-        private HttpClient _httpClient;
-        //private readonly WebApplicationFactory<Program> _factory;
+        private readonly WebApplicationFactory<Program> _factory;
 
-        public IntegrationTests()
+        public IntegrationTests(WebApplicationFactory<Program> factory)
         {
-            _httpClient = new HttpClient()
-            {
-                BaseAddress = new Uri("https://localhost:7253")
-            };
+            _factory = factory;
         }
 
         [Theory]
-        [InlineData("./TestData/IntegrationTest/example.json", "./TestData/IntegrationTest/example.json")]
-        public async Task PostRequestToStatisticsApiEndpoint(string requestJsonPath, string expectedResponseJsonPath)
+        [InlineData("./TestData/IntegrationTest/Test1/input.json", "./TestData/IntegrationTest/Test1/output.json")]
+        [InlineData("./TestData/IntegrationTest/Test2/input.json", "./TestData/IntegrationTest/Test2/output.json")]
+        [InlineData("./TestData/IntegrationTest/Test3/input.json", "./TestData/IntegrationTest/Test3/output.json")]
+        public async Task PostRequest_StatisticsApiEndpoint(string requestJsonPath, string expectedResponseJsonPath)
         {
+            // Arrange
+            var client = _factory.CreateClient();
+
             //Act
             string jsonBody = File.ReadAllText(requestJsonPath);
             var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await _httpClient.PostAsync("api/Receivables/GetStatistics", content);
+            HttpResponseMessage response = await client.PostAsync("api/Receivables/Statistics", content);
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
 
-            string responseContent = await response.Content.ReadAsStringAsync();
+            string actualResponseContent = await response.Content.ReadAsStringAsync();
+            string expectedResponseContent = File.ReadAllText(expectedResponseJsonPath);
 
-            // Read the expected response JSON from the response file
-            string expectedResponse = File.ReadAllText(expectedResponseJsonPath);
+            var expectedJson = JsonSerializer.Serialize(JsonSerializer.Deserialize<object>(expectedResponseContent));
+            var actualJson = JsonSerializer.Serialize(JsonSerializer.Deserialize<object>(actualResponseContent));
 
-            // Compare the expected response JSON with the actual response JSON
-            //Assert.Equal(expectedResponse, responseContent);
-        }
-
-        public void Dispose()
-        {
-            _httpClient.Dispose();
+            Assert.Equal(expectedJson, actualJson);
         }
     }
 }

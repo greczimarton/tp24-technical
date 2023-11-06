@@ -1,0 +1,446 @@
+[
+  {
+    "debtorReference": "D-11111",
+    "debtorName": "LMN Corp.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2325.23,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2325.23,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2325.23,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-22222",
+    "debtorName": "XYZ Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2901.4,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2901.4,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2901.4,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-33333",
+    "debtorName": "PQR AG",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 3788.86,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 3788.86,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 3788.86,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-44444",
+    "debtorName": "RST Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 3,
+      "countRate": 1,
+      "value": 3542.04,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 1,
+      "countRate": 0.33,
+      "value": 837.23,
+      "valueRate": 0.24
+    },
+    "open": {
+      "count": 2,
+      "countRate": 0.67,
+      "value": 2704.81,
+      "valueRate": 0.76
+    },
+    "late": {
+      "count": 2,
+      "countRate": 0.67,
+      "value": 2704.81,
+      "valueRate": 0.76
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-55555",
+    "debtorName": "UVW Inc.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 1824.13,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 1824.13,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 2,
+      "countRate": 1,
+      "value": 1824.13,
+      "valueRate": 1
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-66666",
+    "debtorName": "JKL Corp.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2316.9,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2316.9,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 0.5,
+      "value": 1116,
+      "valueRate": 0.48
+    },
+    "dueIn7Days": 2,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-77777",
+    "debtorName": "ABC Inc.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2934.81,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 2,
+      "countRate": 1,
+      "value": 2934.81,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 0.5,
+      "value": 1725.57,
+      "valueRate": 0.59
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-88888",
+    "debtorName": "XYZ Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1302,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1302,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1302,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-99999",
+    "debtorName": "PQR AG",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-12345",
+    "debtorName": "RST Ltd.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1395,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1395,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1395,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-54321",
+    "debtorName": "ABC Inc.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "open": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "late": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1100.5,
+      "valueRate": 1
+    },
+    "dueIn7Days": 1,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  },
+  {
+    "debtorReference": "D-98765",
+    "debtorName": "LMN Corp.",
+    "currencyCode": "EUR",
+    "all": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1380.86,
+      "valueRate": 1
+    },
+    "cancelled": {
+      "count": 1,
+      "countRate": 1,
+      "value": 1380.86,
+      "valueRate": 1
+    },
+    "open": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "late": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "dueIn7Days": 0,
+    "closed": {
+      "count": 0,
+      "countRate": 0,
+      "value": 0,
+      "valueRate": 0
+    },
+    "closedLate": 0
+  }
+]

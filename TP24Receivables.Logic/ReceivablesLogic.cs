@@ -77,7 +77,7 @@ namespace TP24Receivables.Logic
 
             return receivables.Where(receivable => 
                 receivable.ClosedDate != null &&
-                receivable.ClosedDate <= now && 
+                receivable.ClosedDate.Value.Date <= now.Date && 
                 receivable.PaidValue == receivable.OpeningValue
             ).ToList();
         }
@@ -90,7 +90,7 @@ namespace TP24Receivables.Logic
         private List<Receivable> GetClosedLateReceivables(List<Receivable> closedReceivables)
         {
             return closedReceivables.Where(receivables => 
-                receivables.DueDate < receivables.ClosedDate
+                receivables.DueDate.Date < receivables.ClosedDate.Value.Date
             ).ToList();
         }
 
@@ -108,7 +108,7 @@ namespace TP24Receivables.Logic
             DateTime now = DateTime.Now;
 
             return openReceivables.Where(
-                receivables => receivables.DueDate < now
+                receivables => receivables.DueDate.Date < now.Date
             ).ToList();
         }
     }
