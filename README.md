@@ -72,6 +72,7 @@ I divided the test the following way:
  - Unit tests:
    - Sorting tests: Tests if the API puts the receivables in the correct groups 
    - Summing tests: Tests if the API can sums the receivables correctly, paying attention to the different currencies
+     - I only tested the logic with cancelled receivables, because the other metrics are calculated the same way
  - Integration tests:
    - I send a JSON input and check if the API returns the correct JSON output
    - In the integration tests the second endpoint which doesn't work with the DB at all.
