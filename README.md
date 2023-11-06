@@ -31,7 +31,7 @@ It took around 2 days to complete the assignment.
  - The API will always receive a valid JSON input. Only the optional values can be null
  - The Date fields are sent in ISO 8601 format
  - The number fields are sent in decimal format
- - When checking DueDate < ClosedDate, the API only checks the date part, it ignores the time part
+ - When checking for example ```DueDate < ClosedDate```, the API only checks the date part, it ignores the time part
 
 ### How does it work?
 #### 1. The API parses the received JSON into a list of Debtor objects
