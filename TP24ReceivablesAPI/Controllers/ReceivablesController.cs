@@ -48,5 +48,25 @@ namespace TP24Receivables.API.Controllers
                 return result;
             }
         }
+        
+        [HttpPost]
+        public IActionResult StatisticsWithoutDb(List<Payload> payload)
+        {
+            try
+            {
+                var debtors = PayloadParser.Parse(payload);
+
+                var logic = new ReceivablesLogic(debtors, _statisticsConfig);
+
+                var statistics = logic.GetStatisticsForAllDebtors();
+
+                return Ok(statistics);
+            }
+            catch (Exception ex)
+            {
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return result;
+            }
+        }
     }
 }

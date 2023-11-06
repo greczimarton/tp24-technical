@@ -30,7 +30,7 @@ namespace TP24Receivables.Test
             //Act
             string jsonBody = File.ReadAllText(requestJsonPath);
             var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("api/Receivables/Statistics", content);
+            HttpResponseMessage response = await client.PostAsync("api/Receivables/StatisticsWithoutDb", content);
 
             // Assert
             Assert.True(response.IsSuccessStatusCode);
