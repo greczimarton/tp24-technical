@@ -8,6 +8,13 @@ It took around 2 days to complete the assignment.
  - Visual Studio (I used 2022 Community)
  - .NET 7.0 SDK (for testing purposes)
 
+### Technologies used
+ - ASP.NET Core 7.0 WebAPI
+ - Entity Framework Core
+ - PostgreSQL
+ - Docker
+ - XUnit
+
 ### How to run it?
  - Clone the repository
  - Open project in terminal
@@ -16,7 +23,7 @@ It took around 2 days to complete the assignment.
  - Use the Swagger UI to test the API
    - I added ```example.json``` containing some sample data
    - Copy its contents and paste it into the request body of the POST request
- - You can also connect to the database: localhost:8002
+ - You can also connect to the Postgres database: localhost:8002
    - Username: password
    - Password: username
 
