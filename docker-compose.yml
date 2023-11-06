@@ -1,0 +1,38 @@
+﻿version: "3.4"
+
+networks:
+  tp24-receivables-network:
+    
+volumes: 
+  app_data:
+
+services:
+  tp24-receivables-db:
+    container_name: TP24-DB
+    image: postgres:latest
+    ports:
+      - "8002:5432"
+    environment:
+      - POSTGRES_USER=password
+      - POSTGRES_PASSWORD=username
+      - POSTGRES_DB=TP24DB
+    restart: always
+    networks: 
+      - tp24-receivables-network
+    volumes:
+      - app_data:/var/lib/postgresql/data
+  
+  tp24-receivables-api:
+    container_name: TP24-API
+    image: tp24receivables.api
+    build:
+      context: .
+      dockerfile: TP24ReceivablesAPI/Dockerfile
+    ports:
+      - "8001:80"
+    depends_on: 
+      - tp24-receivables-db
+    environment:
+      - POSTGRES_CONNECTION_STRING=Host=tp24-receivables-db;Port=5432;Database=TP24DB;User Id=password;Password=username;Pooling=true;
+    networks:
+      - tp24-receivables-network
