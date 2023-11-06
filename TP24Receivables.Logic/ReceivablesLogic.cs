@@ -1,20 +1,21 @@
 ﻿using TP24Receivables.Data.Models;
+using TP24Receivables.Logic.Classes;
 using TP24Receivables.Logic.Models;
 
 namespace TP24Receivables.Logic
 {
     public class ReceivablesLogic
     {
-        private CurrencyConverter CurrencyConverter;
+        private IStatisticsConfig statisticsConfig;
         private List<Debtor> Debtors { get; set; }
 
-        public ReceivablesLogic(List<Debtor> debtors, StatisticsConfig config)
+        public ReceivablesLogic(List<Debtor> debtors, IStatisticsConfig config)
         {
             this.Debtors = debtors;
-            this.CurrencyConverter = new CurrencyConverter(config);
+            this.statisticsConfig = config;
         }
 
-        public List<Statistics> GetStatisticsForAllReceivables()
+        public List<Statistics> GetStatisticsForAllDebtors()
         {
             var allStatistics = new List<Statistics>();
 
@@ -32,41 +33,83 @@ namespace TP24Receivables.Logic
             var cancelled = GetCancelledReceivables(debtor.Receivables);
 
             var remaining = debtor.Receivables.Except(cancelled).ToList();
+
             var closedReceivables = GetClosedReceivables(remaining);
             var closedLate = GetClosedLateReceivables(closedReceivables);
+
             var open = remaining.Except(closedReceivables).ToList();
-            var dueIn7Days = GetDueIn7DaysReceivables(closedReceivables);
+            var late = GetLateReceivables(open);
+            var dueIn7Days = GetDueIn7DaysReceivables(open);
+
+            var metricBuilder = new MetricBuilder(debtor.Receivables, statisticsConfig);
 
             return new Statistics()
             {
                 DebtorReference = debtor.Reference,
                 DebtorName = debtor.Name,
-                CurrencyCode = this.CurrencyConverter.Config.CurrencyCode,
-                NumberOfReceivables = debtor.Receivables.Count,
+                CurrencyCode = statisticsConfig.CurrencyCode,
 
-                Cancelled = new Metric(cancelled, debtor.Receivables.Count, CurrencyConverter),
-                Open = new Metric(open, debtor.Receivables.Count, CurrencyConverter),
+                All = metricBuilder.BuildMetric(debtor.Receivables),
+
+                Cancelled = metricBuilder.BuildMetric(cancelled),
+
+                Open = metricBuilder.BuildMetric(open),
+                Late = metricBuilder.BuildMetric(late),
                 DueIn7Days = dueIn7Days.Count,
-                Closed = new Metric(closedReceivables, debtor.Receivables.Count, CurrencyConverter),
+
+                Closed = metricBuilder.BuildMetric(closedReceivables),
                 ClosedLate = closedLate.Count,
             };
         }
+
+
         private List<Receivable> GetCancelledReceivables(List<Receivable> receivables)
         {
-            return receivables.Where(receivable => receivable.Cancelled != null && receivable.Cancelled == true).ToList();
+            return receivables.Where(receivable => 
+                receivable.Cancelled != null && 
+                receivable.Cancelled == true
+            ).ToList();
         }
+
         private List<Receivable> GetClosedReceivables(List<Receivable> receivables)
         {
-            return receivables.Where(receivable => receivable.ClosedDate != null && receivable.PaidValue == receivable.OpeningValue).ToList();
+            DateTime now = DateTime.Now;
+
+            return receivables.Where(receivable => 
+                receivable.ClosedDate != null &&
+                receivable.ClosedDate <= now && 
+                receivable.PaidValue == receivable.OpeningValue
+            ).ToList();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="closedReceivables"></param>
+        /// <returns></returns>
         private List<Receivable> GetClosedLateReceivables(List<Receivable> closedReceivables)
         {
-            return closedReceivables.Where(receivables => receivables.ClosedDate < receivables.DueDate).ToList();
+            return closedReceivables.Where(receivables => 
+                receivables.DueDate < receivables.ClosedDate
+            ).ToList();
         }
-        private List<Receivable> GetDueIn7DaysReceivables(List<Receivable> closedReceivables)
+
+        private List<Receivable> GetDueIn7DaysReceivables(List<Receivable> openReceivables)
         {
             DateTime now = DateTime.Now;
-            return closedReceivables.Where(receivables => (receivables.DueDate - now).TotalDays < 7).ToList();
+
+            return openReceivables.Where(
+                receivables => (receivables.DueDate - now).TotalDays <= 7
+            ).ToList();
+        }
+
+        private List<Receivable> GetLateReceivables(List<Receivable> openReceivables)
+        {
+            DateTime now = DateTime.Now;
+
+            return openReceivables.Where(
+                receivables => receivables.DueDate < now
+            ).ToList();
         }
     }
 }

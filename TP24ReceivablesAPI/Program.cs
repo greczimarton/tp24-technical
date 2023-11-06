@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Swashbuckle.AspNetCore.Filters;
 using TP24Receivables.API;
 using TP24Receivables.Data;
 using TP24Receivables.Data.Models;

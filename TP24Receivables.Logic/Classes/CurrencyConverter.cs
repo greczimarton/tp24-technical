@@ -5,19 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using TP24Receivables.Logic.Models;
 
-namespace TP24Receivables.Logic
+namespace TP24Receivables.Logic.Classes
 {
     public class CurrencyConverter
     {
-        public StatisticsConfig Config {  get; set; }
-        public CurrencyConverter(StatisticsConfig config) 
+        public IStatisticsConfig Config { get; set; }
+        public CurrencyConverter(IStatisticsConfig config)
         {
-            this.Config = config;
+            Config = config;
         }
 
         public double Convert(double inputValue, string inputCurrencyCode)
         {
-            if (!Config.SupportedCurrencies.ContainsKey(inputCurrencyCode)) 
+            if (inputCurrencyCode == null || !Config.SupportedCurrencies.ContainsKey(inputCurrencyCode))
             {
                 return 0;
             }

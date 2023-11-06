@@ -9,7 +9,6 @@ namespace TP24Receivables.Data.Models
 {
     public class Receivable
     {
-        public Guid Id { get; set; }
         public string Reference { get; set; }
         public string CurrencyCode { get; set; }
         public DateTime IssueDate { get; set; }
@@ -19,9 +18,13 @@ namespace TP24Receivables.Data.Models
         public DateTime? ClosedDate { get; set; }
         public bool? Cancelled { get; set; }
 
+        public Receivable()
+        {
+            
+        }
+
         public Receivable(Payload payload)
         {
-            this.Id = Guid.NewGuid();
             this.Reference = payload.Reference;
             this.CurrencyCode = payload.CurrencyCode;
             this.IssueDate = DateTime.Parse(payload.IssueDate, null, System.Globalization.DateTimeStyles.RoundtripKind);

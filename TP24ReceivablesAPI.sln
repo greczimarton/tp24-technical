@@ -3,13 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP24Receivables.API", "TP24ReceivablesAPI\TP24Receivables.API.csproj", "{4EFDE200-830E-40CF-8D32-9A9B6F72593B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP24Receivables.API", "TP24ReceivablesAPI\TP24Receivables.API.csproj", "{4EFDE200-830E-40CF-8D32-9A9B6F72593B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP24Receivables.Logic", "TP24Receivables.Logic\TP24Receivables.Logic.csproj", "{23322299-B0A9-457C-BC05-634CE032C1E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP24Receivables.Logic", "TP24Receivables.Logic\TP24Receivables.Logic.csproj", "{23322299-B0A9-457C-BC05-634CE032C1E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP24Receivables.Repository", "TP24Receivables.Repository\TP24Receivables.Repository.csproj", "{50CE5790-DC7F-47AA-A013-E19B0C52BB56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP24Receivables.Repository", "TP24Receivables.Repository\TP24Receivables.Repository.csproj", "{50CE5790-DC7F-47AA-A013-E19B0C52BB56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP24Receivables.Data", "TP24Receivables.Data\TP24Receivables.Data.csproj", "{772B65CD-13F9-4B37-B048-AE7F139D93C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP24Receivables.Data", "TP24Receivables.Data\TP24Receivables.Data.csproj", "{772B65CD-13F9-4B37-B048-AE7F139D93C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP24Receivables.Test", "TP24Receivables.Test\TP24Receivables.Test.csproj", "{E625D00C-5BEC-4B9C-BBB9-88A98D93B30A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{6BE53957-1783-4539-9CDD-E07681A9E3A5}"
+	ProjectSection(SolutionItems) = preProject
+		example.json = example.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +40,10 @@ Global
 		{772B65CD-13F9-4B37-B048-AE7F139D93C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{772B65CD-13F9-4B37-B048-AE7F139D93C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{772B65CD-13F9-4B37-B048-AE7F139D93C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E625D00C-5BEC-4B9C-BBB9-88A98D93B30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E625D00C-5BEC-4B9C-BBB9-88A98D93B30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E625D00C-5BEC-4B9C-BBB9-88A98D93B30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E625D00C-5BEC-4B9C-BBB9-88A98D93B30A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

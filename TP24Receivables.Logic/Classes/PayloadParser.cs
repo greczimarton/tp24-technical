@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TP24Receivables.Data.Models;
 
-namespace TP24Receivables.Logic
+namespace TP24Receivables.Logic.Classes
 {
     public static class PayloadParser
     {
@@ -23,7 +23,6 @@ namespace TP24Receivables.Logic
                 {
                     Id = Guid.NewGuid(),
                     Reference = group.Key,
-                    
                 };
 
                 foreach (var payload in group)
