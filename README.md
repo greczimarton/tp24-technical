@@ -75,8 +75,9 @@ I divided the test the following way:
      - I only tested the logic with cancelled receivables, because the other metrics are calculated the same way
  - Integration tests:
    - I send a JSON input and check if the API returns the correct JSON output
-   - In the integration tests the second endpoint which doesn't work with the DB at all.
-   - I wanted to setup an in-memory database for this, but I didn't have enough time to do it  
+   - In the integration tests, I use a second endpoint which doesn't work with the DB at all.
+     - I wanted to setup an in-memory database for this, but I didn't have enough time to do it
+     - therefore I went with this is quick and easy approach which doesn't affect tests that much
 
 ### Upgrades
  - I would add a proper logging system
