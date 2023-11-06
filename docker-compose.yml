@@ -34,5 +34,6 @@ services:
       - tp24-receivables-db
     environment:
       - POSTGRES_CONNECTION_STRING=Host=tp24-receivables-db;Port=5432;Database=TP24DB;User Id=password;Password=username;Pooling=true;
+      - ASPNETCORE_ENVIRONMENT=Development
     networks:
       - tp24-receivables-network
