@@ -9,6 +9,7 @@ namespace TP24Receivables.Data.Models
 {
     public class Receivable
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Reference { get; set; }
         public string CurrencyCode { get; set; }
         public DateTime IssueDate { get; set; }

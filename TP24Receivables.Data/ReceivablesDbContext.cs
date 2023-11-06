@@ -19,16 +19,10 @@ namespace TP24Receivables.Data
                 var dbCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
 
                 if (dbCreator == null)
-                {
-                    Debug.WriteLine("Could not get RelationalDatabaseCreator");
-                    return;
-                }
-
+                    throw new Exception("Could not get RelationalDatabaseCreator");
+                
                 if (!dbCreator.CanConnect())
-                {
-                    Debug.WriteLine("Could not connect to database");
-                    return;
-                }
+                    throw new Exception("Could not connect to database");
 
                 if (dbCreator.HasTables())
                 {

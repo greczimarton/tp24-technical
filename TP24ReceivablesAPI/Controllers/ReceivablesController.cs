@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Runtime.InteropServices.JavaScript;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TP24Receivables.Data.Models;
 using TP24Receivables.Logic;
@@ -24,20 +25,28 @@ namespace TP24Receivables.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Statistics(List<Payload> payload)
+        public async Task<IActionResult> Statistics(List<Payload> payload)
         {
-            var debtors = PayloadParser.Parse(payload);
-
-            foreach (var debtor in debtors)
+            try
             {
-                _debtorRepository.SaveDebtor(debtor);
+                var debtors = PayloadParser.Parse(payload);
+
+                foreach (var debtor in debtors)
+                {
+                    await _debtorRepository.SaveDebtor(debtor);
+                }
+
+                var logic = new ReceivablesLogic(debtors, _statisticsConfig);
+
+                var statistics = logic.GetStatisticsForAllDebtors();
+
+                return Ok(statistics);
             }
-
-            var logic = new ReceivablesLogic(debtors, _statisticsConfig);
-
-            var statistics = logic.GetStatisticsForAllDebtors();
-
-            return Ok(statistics);
+            catch (Exception ex)
+            {
+                var result = StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return result;
+            }
         }
     }
 }

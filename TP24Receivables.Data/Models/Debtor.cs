@@ -8,7 +8,7 @@ namespace TP24Receivables.Data.Models
 {
     public class Debtor
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
         public string Reference { get; set; }
         public string? RegistrationNumber { get; set; } = null;

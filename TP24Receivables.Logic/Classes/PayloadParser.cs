@@ -26,10 +26,13 @@ namespace TP24Receivables.Logic.Classes
                     var debtorAddressFromReceivable = new DebtorAddress(payload);
                     var receivable = new Receivable(payload);
 
-                    debtor.DebtorAddresses.Add(debtorAddressFromReceivable);
+                    if (!debtor.DebtorAddresses.Contains(debtorAddressFromReceivable))
+                    {
+                        debtor.DebtorAddresses.Add(debtorAddressFromReceivable);
+                    }
                     debtor.Receivables.Add(receivable);
                 }
-
+                
                 result.Add(debtor);
             }
 
