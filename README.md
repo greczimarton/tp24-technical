@@ -12,10 +12,13 @@ It took around 2 days to complete the assignment.
  - Clone the repository
  - Open project in terminal
  - Run ```docker-compose up -d```
- - Open a browser and navigate to https://localhost:5001/swagger/index.html
+ - Open a browser and navigate to https://localhost:8001/swagger/index.html
  - Use the Swagger UI to test the API
    - I added ```example.json``` containing some sample data
    - Copy its contents and paste it into the request body of the POST request
+ - You can also connect to the database: localhost:8002
+   - Username: password
+   - Password: username
 
 ### Assumptions:
  - The API will always receive a valid JSON input. Only the optional values can be null
@@ -67,3 +70,16 @@ I divided the test the following way:
    - I send a JSON input and check if the API returns the correct JSON output
    - In the integration tests the second endpoint which doesn't work with the DB at all.
    - I wanted to setup an in-memory database for this, but I didn't have enough time to do it  
+
+### Upgrades
+ - I would add a proper logging system
+ - I would add a proper error handling system
+ - I would add live currency exchange rates
+
+### Conclusion
+Thanks for reading about my solution. I really enjoyed working on this assignment. 
+I learned a lot of new things and I had a lot of fun.
+Unfortunately I didn't have enough time to implement everything I wanted, 
+especially the storage and db part were rushed.
+I hope my solution works on your machine as well.
+I'm looking forward to hearing from you.
