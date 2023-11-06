@@ -1,11 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TP24Receivables.Data.Models;
+﻿using TP24Receivables.Data.Models;
 
 namespace TP24Receivables.Logic.Classes
 {

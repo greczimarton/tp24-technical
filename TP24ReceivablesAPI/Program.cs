@@ -18,12 +18,15 @@ namespace TP24ReceivablesAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
             builder.Services.Configure<StatisticsConfig>(
                 builder.Configuration.GetSection("StatisticsConfig")
             );
-            //builder.Services.AddDbContext<ReceivablesDbContext>(options => options.UseSqlServer(
-
-            //));
+            
+            var connectionString = Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
+            builder.Services.AddDbContext<ReceivablesDbContext>(options => 
+                options.UseNpgsql(connectionString)
+            );
 
             var app = builder.Build();
 
